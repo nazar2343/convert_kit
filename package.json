@@ -1,29 +1,26 @@
 {
-  "name": "test-project",
+  "name": "test_project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@mui/material": "^5.10.8",
-    "@reduxjs/toolkit": "^1.9.1",
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.9",
+    "@reduxjs/toolkit": "^1.8.6",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^29.4.0",
-    "@types/node": "^18.11.18",
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "axios": "^1.2.3",
-    "lodash.debounce": "^4.0.8",
-    "qs": "^6.11.0",
-    "react": "^18.0.0",
-    "react-content-loader": "^6.2.0",
-    "react-dom": "^18.0.0",
-    "react-paginate": "^8.1.4",
-    "react-redux": "^8.0.5",
-    "react-router-dom": "^6.7.0",
-    "react-scripts": "5.0.0",
-    "sass": "^1.51.0",
-    "typescript": "^4.9.4",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.65",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "axios": "^1.1.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.4",
+    "react-scripts": "5.0.1",
+    "sass": "^1.55.0",
+    "typescript": "^4.8.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -33,13 +30,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browser": {
-    "[module-name]": false
+  "extends": [
+    "some-other-config-you-use",
+    "prettier"
+  ]
   },
   "browserslist": {
     "production": [
@@ -54,16 +48,6 @@
     ]
   },
   "devDependencies": {
-    "@types/lodash.debounce": "^4.0.7",
-    "sass": "^1.55.0",
-    "eslint": "8.22.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.31.7",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.7.1"
+    "eslint-config-prettier": "^8.6.0"
   }
 }

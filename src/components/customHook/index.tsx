@@ -2,16 +2,13 @@ import { useEffect, useState } from 'react';
 import { useAppDispatch } from '../../hooks';
 import { getCurrency } from '../reduxToolkit/reduxSlice/currencySlice';
 
-interface customHookProps {
-	url: string;
-}
-
 export const useFetch = ({ url }: any) => {
-	const [usd, setUsd] = useState(0 as number);
-	const [gbp, setGbp] = useState(0 as number);
-	const [eur, setEur] = useState(0 as number);
-	const [loading, setloading] = useState(true as boolean);
-	const [error, seterror] = useState('' as string);
+	// const [usd, setUsd] = useState(0 as number);
+	// const [gbp, setGbp] = useState(0 as number);
+	// const [eur, setEur] = useState(0 as number);
+	const [data, setData] = useState([]);
+	const [loading, setLoading] = useState(true as boolean);
+	const [error, setError] = useState('' as string);
 
 	const dispatch = useAppDispatch();
 
@@ -19,16 +16,12 @@ export const useFetch = ({ url }: any) => {
 		fetch(url)
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data, 'datadata');
-
-				seterror(data.error);
+				setData(data);
+				setError(data.error);
 				dispatch(getCurrency(data));
-				// setUsd(data[25].rate)
-				// setGbp(data[24].rate)
-				// setEur(data[32].rate)
-				setloading(false);
+				setLoading(false);
 			});
 	}, [url]);
 
-	return { usd, gbp, eur, loading, error };
+	return { data, loading, error };
 };

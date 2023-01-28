@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from '../HeaderComponent';
 import { Block } from '../BlocksComponent';
 import '../../../src/index.scss';
@@ -27,7 +27,6 @@ export const ConvertingComponent = () => {
 			(countsRef?.current[fromCurrency as keyof typeof useState] /
 				countsRef?.current[toCurrency as keyof typeof useState]) *
 			value;
-		const valueRound = Math.round(value);
 		setFromPrice(Math.round(result * 100) / 100);
 		setToPrice(value);
 	};
@@ -44,7 +43,7 @@ export const ConvertingComponent = () => {
 	};
 
 	return (
-		<>
+		<div className='main_wrapper'>
 			<Header />
 			<div className='App'>
 				<Block
@@ -60,6 +59,6 @@ export const ConvertingComponent = () => {
 					onChangeValue={onChangeToPrice}
 				/>
 			</div>
-		</>
+		</div>
 	);
 };

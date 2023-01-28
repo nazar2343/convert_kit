@@ -1,6 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import currencySlice from './reduxSlice/currencySlice';
-import { typeOptions } from '@testing-library/user-event/dist/type/typeImplementation';
 
 const rootReducer = combineReducers({
 	currency: currencySlice,

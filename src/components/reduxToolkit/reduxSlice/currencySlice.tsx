@@ -1,5 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type currency = {
 	id?: string;
@@ -19,8 +18,6 @@ export const currencySlice = createSlice({
 	initialState,
 	reducers: {
 		getCurrency(state, action: PayloadAction<number[]>) {
-			console.log(action, 'action', state, 'state');
-
 			state.counts.push({
 				id: new Date().toString(),
 				currency: action.payload,

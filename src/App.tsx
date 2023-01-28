@@ -7,6 +7,6 @@ const App = () => {
 			<ConvertingComponent />
 		</>
 	);
-}
+};
 
 export default App;

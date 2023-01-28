@@ -1,15 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
-import { useAppDispatch } from '../../hooks';
-import { getCurrency } from '../reduxToolkit/reduxSlice/currencySlice';
-
-interface customHookProps {
-	url: string;
-}
 
 export const useFetchCurrency = ({ url }: any) => {
 	const [data, setData] = useState('');
-	const [loading, setloading] = useState(true as boolean);
-	const [error, seterror] = useState('' as string);
+	const [loading, setLoading] = useState(true as boolean);
+	const [error, setError] = useState('' as string);
 
 	const countsRef = useRef<HTMLElement | any>(0);
 
@@ -18,8 +12,9 @@ export const useFetchCurrency = ({ url }: any) => {
 			.then((res) => res.json())
 			.then((response) => {
 				countsRef.current = response.conversion_rates;
-				seterror(response.error);
-				setloading(false);
+				setData(response.conversion_rates);
+				setError(response.error);
+				setLoading(false);
 			});
 	}, [url]);
 
